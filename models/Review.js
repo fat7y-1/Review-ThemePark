@@ -1,6 +1,5 @@
-const { Schema } = require("mongoose")
-
-const ReviewSchema = new Schema(
+const mongoose = require("mongoose")
+const ReviewSchema = new mongoose.Schema(
   {
     commit: { type: String, required: true },
     rating: { type: Number },
@@ -13,4 +12,4 @@ const ReviewSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = ReviewSchema
+module.exports = mongoose.model("Review", ReviewSchema)

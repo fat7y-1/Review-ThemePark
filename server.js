@@ -4,7 +4,8 @@ const logger = require("morgan")
 const gameRouter = require("./Routes/gameRouter")
 
 const PORT = process.env.PORT || 3000
-
+const dns = require("dns")
+dns.setServers(["8.8.8.8", "1.1.1.1"])
 const db = require("./db")
 
 const app = express()
