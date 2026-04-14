@@ -17,10 +17,10 @@ const getReview = async (req, res) => {
   }
 }
 
-const deleteReview = async () => {
+const deleteReview = async (req, res) => {
   try {
-    const deleteReview = await Review.delete(req.params)
-    res.send(deleteReview)
+    await Review.findByIdAndDelete(req.params.id)
+    res.send("deleted")
   } catch (error) {
     throw error
   }
