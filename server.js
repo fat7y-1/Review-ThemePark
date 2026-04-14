@@ -17,9 +17,9 @@ app.use(express.urlencoded({ extended: false }))
 console.log(" ")
 app.use("/game", gameRouter)
 app.use("/review", reviewRouter)
-app.use("/", (req, res) => {
-  res.send(`Connected!`)
-})
+// app.use("/", (req, res) => {
+//   res.send(`Connected!`)
+// })
 
 app.listen(PORT, () => {
   console.log(`Running Express server on Port ${PORT} . . .`)
