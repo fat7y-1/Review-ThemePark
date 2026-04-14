@@ -4,7 +4,8 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.4.1",
-    "morgan": "^1.10.1"
+    "morgan": "^1.10.1",
+    "react-router-dom": "^7.14.1"
   },
   "name": "review-themepark",
   "version": "1.0.0",

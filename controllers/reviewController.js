@@ -10,16 +10,6 @@ const createReview = async (req, res) => {
   }
 }
 
-const getAllReview = async (req, res) => {
-  try {
-    const getReview = await Review.find({ game: req.params.id })
-    res.send(getReview)
-  } catch (error) {
-    throw error
-  }
-}
-
 module.exports = {
   createReview,
-  getAllReview,
 }
