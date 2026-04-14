@@ -1,15 +1,17 @@
 const express = require("express")
 const logger = require("morgan")
+const cors = require("cors")
 
 const gameRouter = require("./Routes/gameRouter")
 const reviewRouter = require("./Routes/reviewRouter")
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 const dns = require("dns")
 dns.setServers(["8.8.8.8", "1.1.1.1"])
 const db = require("./db")
 
 const app = express()
 
+app.use(cors())
 app.use(logger("dev"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
