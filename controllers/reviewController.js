@@ -8,7 +8,16 @@ const createReview = async (req, res) => {
     throw error
   }
 }
+const getReview = async (req, res) => {
+  try {
+    const All = await Review.find({ game: req.params.id })
+    res.status(200).send(All)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   createReview,
+  getReview,
 }
