@@ -1,5 +1,6 @@
 const express = require("express")
 const logger = require("morgan")
+const cors = require("cors")
 
 const gameRouter = require("./Routes/gameRouter")
 const reviewRouter = require("./Routes/reviewRouter")
@@ -9,11 +10,11 @@ dns.setServers(["8.8.8.8", "1.1.1.1"])
 const db = require("./db")
 
 const app = express()
-
+app.use(cors())
 app.use(logger("dev"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-
+console.log(" ")
 app.use("/game", gameRouter)
 app.use("/review", reviewRouter)
 app.use("/", (req, res) => {

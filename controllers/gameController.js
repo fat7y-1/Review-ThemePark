@@ -3,7 +3,7 @@ const Game = require("../models/Game")
 const GetAll = async (req, res) => {
   try {
     const All = await Game.find({})
-    res.send(All)
+    res.status(200).send(All)
   } catch (error) {
     throw error
   }
